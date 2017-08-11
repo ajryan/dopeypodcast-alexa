@@ -1,7 +1,7 @@
 'use strict';
 
 var Alexa = require('alexa-sdk');
-var audioData = require('./audioAssets');
+var podcastFeed = require('./podcastFeed');
 var constants = require('./constants');
 
 // Binding audio handlers to PLAY_MODE State since they are expected only in this mode.
@@ -39,44 +39,49 @@ var audioEventHandlers = Alexa.CreateStateHandler(constants.states.PLAY_MODE, {
         this.emit(':saveState', true);
     },
     'PlaybackNearlyFinished' : function () {
-        /*
-         * AudioPlayer.PlaybackNearlyFinished Directive received.
-         * Using this opportunity to enqueue the next audio
-         * Storing details in dynamoDB using attributes.
-         * Enqueuing the next audio file.
-         */
-        if (this.attributes['enqueuedToken']) {
-            /*
-             * Since AudioPlayer.PlaybackNearlyFinished Directive are prone to be delivered multiple times during the
-             * same audio being played.
-             * If an audio file is already enqueued, exit without enqueuing again.
-             */
-            return this.context.succeed(true);
-        }
-        
-        var enqueueIndex = this.attributes['index'];
-        enqueueIndex +=1;
-        // Checking if  there are any items to be enqueued.
-        if (enqueueIndex === audioData.length) {
-            if (this.attributes['loop']) {
-                // Enqueueing the first item since looping is enabled.
-                enqueueIndex = 0;
-            } else {
-                // Nothing to enqueue since reached end of the list and looping is disabled.
-                return this.context.succeed(true);
-            }
-        }
-        // Setting attributes to indicate item is enqueued.
-        this.attributes['enqueuedToken'] = String(this.attributes['playOrder'][enqueueIndex]);
+        var that = this;
+        var feedUrl = process.env.feed;
 
-        var enqueueToken = this.attributes['enqueuedToken'];
-        var playBehavior = 'ENQUEUE';
-        var podcast = audioData[this.attributes['playOrder'][enqueueIndex]];
-        var expectedPreviousToken = this.attributes['token'];
-        var offsetInMilliseconds = 0;
-        
-        this.response.audioPlayerPlay(playBehavior, podcast.url, enqueueToken, expectedPreviousToken, offsetInMilliseconds);
-        this.emit(':responseReady');
+        return podcastFeed.getFeed(feedUrl).then(function(feedData) {
+            /*
+            * AudioPlayer.PlaybackNearlyFinished Directive received.
+            * Using this opportunity to enqueue the next audio
+            * Storing details in dynamoDB using attributes.
+            * Enqueuing the next audio file.
+            */
+            if (that.attributes['enqueuedToken']) {
+                /*
+                * Since AudioPlayer.PlaybackNearlyFinished Directive are prone to be delivered multiple times during the
+                * same audio being played.
+                * If an audio file is already enqueued, exit without enqueuing again.
+                */
+                return that.context.succeed(true);
+            }
+            
+            var enqueueIndex = that.attributes['index'];
+            enqueueIndex +=1;
+            // Checking if  there are any items to be enqueued.
+            if (enqueueIndex === feedData.episodes.length) {
+                if (that.attributes['loop']) {
+                    // Enqueueing the first item since looping is enabled.
+                    enqueueIndex = 0;
+                } else {
+                    // Nothing to enqueue since reached end of the list and looping is disabled.
+                    return that.context.succeed(true);
+                }
+            }
+            // Setting attributes to indicate item is enqueued.
+            that.attributes['enqueuedToken'] = String(that.attributes['playOrder'][enqueueIndex]);
+
+            var enqueueToken = that.attributes['enqueuedToken'];
+            var playBehavior = 'ENQUEUE';
+            var podcast = feedData.episodes[that.attributes['playOrder'][enqueueIndex]];
+            var expectedPreviousToken = that.attributes['token'];
+            var offsetInMilliseconds = 0;
+            
+            that.response.audioPlayerPlay(playBehavior, podcast.enclosure.url, enqueueToken, expectedPreviousToken, offsetInMilliseconds);
+            that.emit(':responseReady');
+        });
     },
     'PlaybackFailed' : function () {
         //  AudioPlayer.PlaybackNearlyFinished Directive received. Logging the error.

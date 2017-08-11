@@ -1,23 +1,29 @@
 {
-  "name": "skill-sample-nodejs-audio-player",
+  "name": "dopey-podcast",
   "version": "1.0.0",
-  "description": "An audio player sample skill.",
+  "description": "Dopey Podcast player.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "keywords": [
     "alexa",
     "skill",
-    "audio player"
+    "audio player",
+    "podcast",
+    "dopey",
+    "dopey podcast"
   ],
-  "author": "Amazon.com",
-  "license": "See license in ../LICENSE.txt",
+  "author": "ryan.aidan@gmail.com",
+  "license": "MIT",
   "dependencies": {
-    "alexa-sdk": "^1.0.4"
+    "alexa-sdk": "^1.0.4",
+    "node-podcast-parser": "^2.0.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/alexa/skill-sample-nodejs-audio-player"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajryan/dopeypodcast"
   }
 }
