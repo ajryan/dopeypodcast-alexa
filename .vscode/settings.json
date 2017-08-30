@@ -1,9 +1,0 @@
-{
-    "files.exclude": {
-        "**/bin": true,
-        "**/obj": true,
-        "**/.git": true,
-        "**/*.js.map": true,
-        "**/*.js": {"when": "$(basename).ts"}
-    }
-}
