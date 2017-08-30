@@ -1,0 +1,8 @@
+C:\dev\dopeypodcast-alexa\skill.net\bin\Release\netcoreapp1.0\skill.net.deps.json
+C:\dev\dopeypodcast-alexa\skill.net\bin\Release\netcoreapp1.0\skill.net.dll
+C:\dev\dopeypodcast-alexa\skill.net\bin\Release\netcoreapp1.0\skill.net.pdb
+C:\dev\dopeypodcast-alexa\skill.net\obj\Release\netcoreapp1.0\skill.net.csproj.CoreCompileInputs.cache
+C:\dev\dopeypodcast-alexa\skill.net\obj\Release\netcoreapp1.0\skill.net.AssemblyInfo.cs
+C:\dev\dopeypodcast-alexa\skill.net\obj\Release\netcoreapp1.0\skill.net.dll
+C:\dev\dopeypodcast-alexa\skill.net\obj\Release\netcoreapp1.0\skill.net.pdb
+C:\dev\dopeypodcast-alexa\skill.net\obj\Release\netcoreapp1.0\skill.net.AssemblyInfoInputs.cache

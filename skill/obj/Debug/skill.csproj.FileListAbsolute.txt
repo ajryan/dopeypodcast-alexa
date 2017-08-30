@@ -1,0 +1,6 @@
+C:\dev\dopeypodcast-alexa\skill\obj\Debug\skill.csprojResolveAssemblyReference.cache
+C:\dev\dopeypodcast-alexa\skill\bin\skill.dll
+C:\dev\dopeypodcast-alexa\skill\bin\skill.pdb
+C:\dev\dopeypodcast-alexa\skill\obj\Debug\skill.dll
+C:\dev\dopeypodcast-alexa\skill\obj\Debug\skill.pdb
+C:\dev\dopeypodcast-alexa\skill\obj\Debug\skill.csproj.CoreCompileInputs.cache

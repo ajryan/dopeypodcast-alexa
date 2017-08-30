@@ -1,0 +1,35 @@
+{
+  "name": "dopey-podcast",
+  "version": "1.0.0",
+  "description": "Dopey Podcast player.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "keywords": [
+    "alexa",
+    "skill",
+    "audio player",
+    "podcast",
+    "dopey",
+    "dopey podcast"
+  ],
+  "author": "ryan.aidan@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "alexa-sdk": "^1.0.4",
+    "node-podcast-parser": "^2.0.0",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajryan/dopeypodcast"
+  },
+  "devDependencies": {
+    "@types/alexa-sdk": "^1.0.9",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/node": "^8.0.25",
+    "@types/request-promise-native": "^1.0.6"
+  }
+}

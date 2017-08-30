@@ -1,0 +1,16 @@
+C:\dev\dopeypodcast-alexa\skill.net.tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\dev\dopeypodcast-alexa\skill.net.tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\dev\dopeypodcast-alexa\skill.net.tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\dev\dopeypodcast-alexa\skill.net.tests\bin\Debug\netcoreapp1.1\skill.net.tests.deps.json
+C:\dev\dopeypodcast-alexa\skill.net.tests\bin\Debug\netcoreapp1.1\skill.net.tests.runtimeconfig.json
+C:\dev\dopeypodcast-alexa\skill.net.tests\bin\Debug\netcoreapp1.1\skill.net.tests.runtimeconfig.dev.json
+C:\dev\dopeypodcast-alexa\skill.net.tests\bin\Debug\netcoreapp1.1\skill.net.tests.dll
+C:\dev\dopeypodcast-alexa\skill.net.tests\bin\Debug\netcoreapp1.1\skill.net.tests.pdb
+C:\dev\dopeypodcast-alexa\skill.net.tests\bin\Debug\netcoreapp1.1\skill.net.dll
+C:\dev\dopeypodcast-alexa\skill.net.tests\bin\Debug\netcoreapp1.1\skill.net.pdb
+C:\dev\dopeypodcast-alexa\skill.net.tests\obj\Debug\netcoreapp1.1\skill.net.tests.csprojResolveAssemblyReference.cache
+C:\dev\dopeypodcast-alexa\skill.net.tests\obj\Debug\netcoreapp1.1\skill.net.tests.csproj.CoreCompileInputs.cache
+C:\dev\dopeypodcast-alexa\skill.net.tests\obj\Debug\netcoreapp1.1\skill.net.tests.AssemblyInfo.cs
+C:\dev\dopeypodcast-alexa\skill.net.tests\obj\Debug\netcoreapp1.1\skill.net.tests.dll
+C:\dev\dopeypodcast-alexa\skill.net.tests\obj\Debug\netcoreapp1.1\skill.net.tests.pdb
+C:\dev\dopeypodcast-alexa\skill.net.tests\obj\Debug\netcoreapp1.1\skill.net.tests.AssemblyInfoInputs.cache
